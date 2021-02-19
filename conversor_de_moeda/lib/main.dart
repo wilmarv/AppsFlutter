@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
@@ -90,7 +89,7 @@ class _HomeState extends State<Home> {
               case ConnectionState.waiting:
                 return Center(
                   child: Text(
-                    "Carregando Dados...",
+                    "Carregando Dados...!!",
                     style: TextStyle(color: Colors.green, fontSize: 25),
                     textAlign: TextAlign.center,
                   ),
