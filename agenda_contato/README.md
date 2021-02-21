@@ -1,16 +1,10 @@
 # agenda_contato
 
-Uma agenda de contato para salvar nome/email/numero telefone
+Uma agenda de contato para salvar nome/email/numero telefone com Banco de Dados
 
-## Getting Started
+## App Flutter
 
-This project is a starting point for a Flutter application.
+App Desenvolvido (6/16) para ANDROID e iOS com Flutter 
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image](https://media-exp1.licdn.com/dms/image/C4D22AQGXT1GrP-AqIA/feedshare-shrink_800/0/1613877417181?e=1616630400&v=beta&t=WTuto9GoXEK9vxt4s9mWw4VXtYyCuX17h02LpAkc9II)
+![image](https://media-exp1.licdn.com/dms/image/C4D22AQGZcyhq9y75ow/feedshare-shrink_800/0/1613877417384?e=1616630400&v=beta&t=o2YEQFQhW7Mu0Kp6x-WOQibunYMBApMjP2Ey4tnz4hg)
