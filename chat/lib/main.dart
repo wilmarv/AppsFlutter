@@ -1,12 +1,14 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'chat_screen.dart';
 import 'package:flutter/material.dart';
-void main(){
+
+void main() async {
   runApp(MaterialApp(
-    home: Container(),
+      home: ChatScreen(),
+    theme: ThemeData(
+      primarySwatch:Colors.blue,
+      iconTheme: IconThemeData(
+        color: Colors.blue
+      )
+    ),
   ));
-  Firestore.instance.collection("mensagem").document('msg1').setData({
-    "texto": "Olá",
-    "from": "Wilmar",
-    "read": false
-  });
 }
