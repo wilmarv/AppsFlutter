@@ -1,6 +1,6 @@
 # lojavirtual
 
-App com paginas de login/cadastro/lista de produtos e um menu
+App com sistema de login e cadastro 
 
 ## Getting Started
 
