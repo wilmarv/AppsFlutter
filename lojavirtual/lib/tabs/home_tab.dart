@@ -8,14 +8,14 @@ class HomeTap extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget _buildBodyBack()=> Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(255, 16, 66, 99),
-            Color.fromARGB(255, 103, 203, 253)
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight
-        )
+          gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 16, 66, 99),
+                Color.fromARGB(255, 103, 203, 253)
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight
+          )
       ),
     );
     return Stack(
@@ -34,37 +34,37 @@ class HomeTap extends StatelessWidget {
               ),
             ),
             FutureBuilder<QuerySnapshot>(
-              future: Firestore.instance
-                .collection("home").orderBy("pos").getDocuments(),
+                future: Firestore.instance
+                    .collection("home").orderBy("pos").getDocuments(),
                 // ignore: missing_return
                 builder: (context,snapshot){
-                if(!snapshot.hasData)
-                  return SliverToBoxAdapter(
-                    child: Container(
-                      height: 200,
-                      alignment: Alignment.center,
-                      child: CircularProgressIndicator(
-                        valueColor:AlwaysStoppedAnimation<Color>(Colors.white),
+                  if(!snapshot.hasData)
+                    return SliverToBoxAdapter(
+                      child: Container(
+                        height: 200,
+                        alignment: Alignment.center,
+                        child: CircularProgressIndicator(
+                          valueColor:AlwaysStoppedAnimation<Color>(Colors.white),
 
+                        ),
                       ),
-                    ),
-                  );
-                else
-                  return SliverStaggeredGrid.count(
-                  crossAxisCount: 2,
-                    mainAxisSpacing: 1,
-                    crossAxisSpacing: 1,
-                    staggeredTiles: snapshot.data.documents.map((e){
-                      return StaggeredTile.count(e.data["x"], e.data["y"]);
-                    }).toList(),
-                    children:
+                    );
+                  else
+                    return SliverStaggeredGrid.count(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 1,
+                      crossAxisSpacing: 1,
+                      staggeredTiles: snapshot.data.documents.map((e){
+                        return StaggeredTile.count(e.data["x"], e.data["y"]);
+                      }).toList(),
+                      children:
                       snapshot.data.documents.map((e){
                         return FadeInImage.memoryNetwork(
-                            placeholder: kTransparentImage,
-                            image: e.data["image"],
-                        fit: BoxFit.cover,);
+                          placeholder: kTransparentImage,
+                          image: e.data["image"],
+                          fit: BoxFit.cover,);
                       }).toList(),
-                  );
+                    );
                 }
             )
           ],

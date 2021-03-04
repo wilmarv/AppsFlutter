@@ -18,10 +18,10 @@ class ProdutosTab extends StatelessWidget {
             );
           else {
             var dividerTiles = ListTile.divideTiles(
-                    tiles: snapshot.data.documents.map((doc) {
-                      return CategoriaTile(doc);
-                    }).toList(),
-                    color: Colors.grey[500])
+                tiles: snapshot.data.documents.map((doc) {
+                  return CategoriaTile(doc);
+                }).toList(),
+                color: Colors.grey[500])
                 .toList();
             return ListView(
               children: dividerTiles,
