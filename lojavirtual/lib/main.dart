@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:lojavirtual/models/user_model.dart';
 import 'package:lojavirtual/screens/home_screen.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-void main() => runApp(new MyApp());
+import 'models/user_model.dart';
 
-class MyApp extends StatelessWidget {
+void main(){
+  runApp(Myapp());
+}
+class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScopedModel<UserModel>(

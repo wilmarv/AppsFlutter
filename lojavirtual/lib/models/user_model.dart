@@ -45,8 +45,17 @@ class UserModel extends Model {
   }
 
   void recoverPass() {}
+  void singOut()async{
+    await _auth.signOut();
+    userData= Map();
+    user = null;
+    notifyListeners();
+  }
 
-  void isLoggerIn() {}
+  bool isLoggerIn() {
+    return user != null;
+  }
+
 
   Future _saveUserData(Map<String,dynamic> userData)async{
     this.userData = userData;

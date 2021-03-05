@@ -14,10 +14,12 @@ class _CadastroScreenState extends State<CadastroScreen> {
   final _adressController = TextEditingController();
 
   final _globalKey = GlobalKey<FormState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
         appBar: AppBar(
           title: Text("Criar Conta"),
           centerTitle: true,
@@ -112,7 +114,20 @@ class _CadastroScreenState extends State<CadastroScreen> {
           },
         ));
   }
-  void _onSuccess() {}
+  void _onSuccess() {
+    _scaffoldKey.currentState.showSnackBar(
+      SnackBar(content: Text("Usuario criado com sucesso!"),
+      backgroundColor: Theme.of(context).primaryColor,
+      duration: Duration(seconds: 2),)
+    );
+    Future.delayed(Duration(seconds: 2)).then((value) => Navigator.of(context).pop());
+  }
 
-  void _onFail() {}
+  void _onFail() {
+    _scaffoldKey.currentState.showSnackBar(
+        SnackBar(content: Text("Falha ao criar usuario!"),
+          backgroundColor: Colors.redAccent,
+          duration: Duration(seconds: 2),)
+    );
+  }
 }
