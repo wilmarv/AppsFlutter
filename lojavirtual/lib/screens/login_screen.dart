@@ -3,12 +3,21 @@ import 'package:lojavirtual/models/user_model.dart';
 import 'package:lojavirtual/screens/cadastro_screen.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   final _globalKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passController = TextEditingController();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text("Entrar"),
         centerTitle: true,
@@ -27,7 +36,7 @@ class LoginScreen extends StatelessWidget {
       body: ScopedModelDescendant<UserModel>(
         // ignore: missing_return
         builder: (context, child, model) {
-          if(model.isLoading)
+          if (model.isLoading)
             return Center(
               child: CircularProgressIndicator(),
             );
@@ -37,6 +46,7 @@ class LoginScreen extends StatelessWidget {
               padding: EdgeInsets.all(16),
               children: [
                 TextFormField(
+                  controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(hintText: "E-mail"),
                   // ignore: missing_return
@@ -47,6 +57,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 TextFormField(
+                  controller: _passController,
                   keyboardType: TextInputType.visiblePassword,
                   decoration: InputDecoration(
                     hintText: "Senha",
@@ -77,9 +88,12 @@ class LoginScreen extends StatelessWidget {
                   child: RaisedButton(
                     onPressed: () {
                       if (_globalKey.currentState.validate()) {
-
+                        model.singIn(
+                            email: _emailController.text,
+                            pass: _passController.text,
+                            onSuccess: _onSuccess,
+                            onFail: _onFail);
                       }
-                      model.singIn();
                     },
                     child: Text(
                       "Entrar",
@@ -94,6 +108,17 @@ class LoginScreen extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+  void _onSuccess() {
+    Navigator.of(context).pop();
+  }
+
+  void _onFail() {
+    _scaffoldKey.currentState.showSnackBar(
+        SnackBar(content: Text("Falha ao Conectar!"),
+          backgroundColor: Colors.redAccent,
+          duration: Duration(seconds: 2),)
     );
   }
 }
