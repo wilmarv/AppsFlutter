@@ -1,30 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:lojavirtual/screens/cadastro_screen.dart';
 
-class LoginScreen extends StatelessWidget {
+class CadastroScreen extends StatelessWidget {
   final _globalKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Entrar"),
+        title: Text("Criar Conta"),
         centerTitle: true,
-        actions: [
-          FlatButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> CadastroScreen()));
-              },
-              child: Text(
-                "CRIAR CONTA",
-                style: TextStyle(fontSize: 15, color: Colors.white),
-              ))
-        ],
       ),
       body: Form(
         key: _globalKey,
         child: ListView(
           padding: EdgeInsets.all(16),
           children: [
+            TextFormField(
+              keyboardType: TextInputType.text,
+              decoration: InputDecoration(hintText: "Nome Completo"),
+              // ignore: missing_return
+              validator: (text){
+                if(text.isEmpty) return "Nome inválido!";
+              },
+            ),
+            SizedBox(height: 16),
             TextFormField(
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(hintText: "E-mail"),
@@ -45,16 +43,14 @@ class LoginScreen extends StatelessWidget {
                 if(text.isEmpty || text.length < 6) return "Senha Inválida!";
               },
             ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: FlatButton(
-                onPressed: () {},
-                child: Text(
-                  "Esqueci minha senha",
-                  textAlign: TextAlign.right,
-                ),
-                padding: EdgeInsets.zero,
-              ),
+            SizedBox(height: 16),
+            TextFormField(
+              keyboardType: TextInputType.streetAddress,
+              decoration: InputDecoration(hintText: "Endereço"),
+              // ignore: missing_return
+              validator: (text){
+                if(text.isEmpty ) return "Endereço inválido!";
+              },
             ),
             SizedBox(
               height: 16,
@@ -64,11 +60,11 @@ class LoginScreen extends StatelessWidget {
               child: RaisedButton(
                 onPressed: () {
                   if(_globalKey.currentState.validate()){
-                    
+
                   }
                 },
                 child: Text(
-                  "Entrar",
+                  "Criar Conta",
                   style: TextStyle(fontSize: 18),
                 ),
                 textColor: Colors.white,
