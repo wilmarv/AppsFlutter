@@ -48,20 +48,24 @@ class CategoriaScreen extends StatelessWidget {
                         itemCount: dados.data.documents.length,
                         // ignore: missing_return
                         itemBuilder: (context, index) {
+                          DataProdutos data = DataProdutos.fromDocuments(
+                              dados.data.documents[index]);
+                           data.categoria = this.snapshot.documentID;
                           return ProdutoTile(
-                              "grid",
-                              DataProdutos.fromDocuments(
-                                  dados.data.documents[index]));
+                              "grid",data
+                              );
                         },
                       ),
                       ListView.builder(
                         padding: EdgeInsets.all(4),
                         itemCount: dados.data.documents.length,
                         itemBuilder: (context, index) {
+                          DataProdutos data = DataProdutos.fromDocuments(
+                              dados.data.documents[index]);
+                          data.categoria = this.snapshot.documentID;
                           return ProdutoTile(
                               "list",
-                              DataProdutos.fromDocuments(
-                                  dados.data.documents[index]));
+                              data);
                         },
                       )
                     ],
