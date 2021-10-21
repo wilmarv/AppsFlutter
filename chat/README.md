@@ -5,4 +5,4 @@ Chat online, integração do firebase em um projeto flutter
 
 App Desenvolvido (7/16) para ANDROID e iOS com Flutter 
 
-![image](https://media-exp1.licdn.com/dms/image/C4D22AQHF36t7NELWWw/feedshare-shrink_2048_1536/0/1614369926907?e=1617235200&v=beta&t=DYvKM89MYD6fih_l9QKGR2GnY2ugXxXPkldFZkLP39U)
+![chatOnline](https://user-images.githubusercontent.com/64598132/138198700-bad08ceb-53dd-4568-b288-fb8f683a3d81.gif)
