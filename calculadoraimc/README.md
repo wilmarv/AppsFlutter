@@ -6,7 +6,9 @@ Calculadora de IMC
 
 This project is a starting point for a Flutter application.
 
-![Image](https://media-exp1.licdn.com/dms/image/C4D22AQGEEe1xvgZtMA/feedshare-shrink_800/0/1598293428153?e=1616025600&v=beta&t=qvxJjvnCPjpkowpMprhG1ui7W3kLYGotP56lDcdln-w) ![Image](https://media-exp1.licdn.com/dms/image/C4D22AQG6AOJE2UDnng/feedshare-shrink_800/0/1598293428274?e=1616025600&v=beta&t=j9kl0Nv5jV3akZwsTNvB7cRoMEcFugI1eyWzoOWGqxU)
+![calculadoraIMC1](https://user-images.githubusercontent.com/64598132/138198591-3437027d-82bd-4430-ad27-5066a7823afe.gif)
+![calculadoraIMC2](https://user-images.githubusercontent.com/64598132/138198599-f1129e96-a884-4734-9cf2-7f722c566525.gif)
+
 
 A few resources to get you started if this is your first Flutter project:
 
