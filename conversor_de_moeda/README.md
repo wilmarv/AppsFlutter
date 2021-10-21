@@ -6,4 +6,6 @@ Converte a moeda real para o dollar
 [Criação de Apps Android e iOS com Flutter](https://www.udemy.com/course/curso-completo-flutter-app-android-ios/)
 App Desenvolvido (3/16) para ANDROID e iOS com Flutter
 
-![image](https://media-exp1.licdn.com/dms/image/C4D22AQEZjaT72lNcIg/feedshare-shrink_800/0/1598421332774?e=1616025600&v=beta&t=7ztW7mAYBnDHQnUBwpw4nAm8ZI6cD8qJO5NBSnxIGrc) ![image](https://media-exp1.licdn.com/dms/image/C4D22AQEw8Uah6bWv8A/feedshare-shrink_800/0/1598421333320?e=1616025600&v=beta&t=p3qYFxu_4zI6HWl9-5sQuH97-QNh5ZSZkJvefLMmWCA)
+
+![conversorMoeda1](https://user-images.githubusercontent.com/64598132/138198757-3363f191-7678-4ac5-82f5-ef796083231d.gif)
+![conversorMoeda2](https://user-images.githubusercontent.com/64598132/138198766-b8ac6d9d-5d68-479d-a4c4-a75fed3092c9.gif)
